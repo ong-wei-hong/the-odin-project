@@ -1,0 +1,364 @@
+/* global styles */
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width: 100%;
+}
+.point:hover {
+    cursor: pointer;
+}
+
+em{
+    color: #555;
+    text-decoration: none;
+}
+
+/* top */
+.top {
+    position: fixed;
+    top: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    width: 100%;
+    background-color: #FFF;
+    border-bottom: 1px solid #AAA;
+}
+
+.google-logo {
+    margin-left: 1rem;
+    width: 6rem;
+    height: 2rem;
+}
+
+.searchbar {
+    margin-left: 2rem;
+    border: 1px solid #EEE;
+    box-shadow: 2px 2px 1px #DDD;
+    padding-left: 1rem;
+    border-radius: 30px;
+    margin-right: 12rem;
+}
+
+.searchbar:hover {
+    border: 1px solid #DDD;
+    box-shadow: 2px 2px 1px #CCC;
+}
+
+.input {
+    width: 20rem;
+    border: none;
+    outline: none;
+    margin-bottom: 0.2rem;
+}
+
+.searchbar-logo {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.searchbar-line {
+    border-left: 0.1px solid #000;
+    margin-right: 0.2rem;   
+}
+
+.apps{
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid transparent;
+    border-radius: 100%;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    padding: 3px;
+}
+
+.apps:hover {
+    border-color: #BBB;
+    background-color: #BBB;
+}
+
+.sign-in {
+    background-color: #66F;
+    color: #FFF;
+    border:none;
+    outline: none;
+    padding: 0 1rem;
+    border-radius: 3px;
+}
+
+.sign-in:hover {
+    background-color: #77F;
+}
+
+/* toolbar */
+.toolbar {
+    margin-top: 5rem;
+    display: flex;
+    padding: 0.7rem 0 0.5rem 3rem;
+    border-bottom: 1px solid #BBB;
+}
+
+.toolbar-element {
+    display: flex;
+    margin-right: 1rem;
+}
+
+.toolbar-image {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.toolbar-text {
+    text-align: center;
+    padding-top: 0.2rem;
+}
+
+.toolbar-button {
+    margin-left: 1rem;
+    padding: 5px 5px;
+    margin-bottom: 2px;
+}
+
+.toolbar-button:hover {
+    border: 1px solid #AAA;
+    background-color: #DDD;
+    margin-bottom: 0px;
+}
+
+.toolbar-selected {
+    border-bottom: 5px solid #00F;
+}
+/* main */
+main {
+    margin-left: 3rem;
+    margin-top: 1rem;
+}
+
+.results-element {
+    margin-top: 2rem;
+    width: 50%;
+}
+
+.results-website {
+    display: flex;
+}
+
+.result-title {
+    margin-bottom: 0.2rem;
+    color: #00F;
+}
+
+.result-title:hover {
+    text-decoration: underline;
+}
+
+.result-title:active {
+    color: #90F
+}
+
+.ad-bar {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.ad-bar-element {
+    margin-right: 1rem;
+    color: #00F;
+}
+
+.ad-bar-element:hover {
+    text-decoration: underline;
+}
+
+.ad-bar-element:active {
+    color: #90F;
+}
+
+.related-searches-title {
+    margin-top: 2rem;
+    margin-bottom: 0.3rem;
+}
+
+.related-searches {
+    width: 60%;
+    border: 1px solid #AAA;
+    border-radius: 10px;
+    padding-bottom: 0.5rem;
+}
+
+.best-website-builder-bar {
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.best-website-builder-bar-text {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+.best-website-builder-bar-img {
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+}
+
+.best-website-list {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.best-website-element:hover {
+    text-decoration: underline;
+}
+
+.godaddy {
+    width: 4rem;
+    height: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.squarespace {
+    width: 4rem;
+    height: 4rem;
+}
+
+.weebly {
+    width: 4rem;
+    height: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.shopify {
+    width: 4rem;
+    height: 4rem;
+}
+
+.jimdo {
+    width: 4rem;
+    height: 3rem;
+    margin-top: 1rem;
+}
+
+.strikingly {
+    width: 4rem;
+    height: 4rem;
+}
+
+.see-more {
+    margin-top: 1rem;
+    margin-left: 7rem;
+    padding-left: 1rem;
+    display:flex;
+    border: 1px solid #AAA;
+    margin-right: 8rem;
+    border-radius: 30px;
+}
+
+.see-more:hover {
+    background-color: #EEE;
+}
+
+.see-more-text {
+    color: #00D;
+    margin-top: 0.2rem;
+    padding-left: 5rem;
+}
+
+.feedback {
+    float:right;
+    background-color: #FFF;
+    padding-left: 0.2rem;
+}
+
+.similar-searches {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+.similar-searches-element {
+    display: flex;
+    width: 16rem;
+    margin: 0.2rem;
+    border-radius: 30px;
+    padding: 0.5rem 0 0.5rem 0.2rem;
+    background-color: #EEE;
+}
+
+.similar-searches-element:hover {
+    text-decoration: underline;
+}
+
+.similar-searches-image {
+    width: 1rem;
+    height: 1rem;
+}
+
+.long-google {
+    display: flex;
+    text-align: center;
+    margin-left: 10rem;
+    margin-top: 3rem;
+}
+
+.long-google-element-img {
+    height: 2rem;
+}
+
+.long-google-unselected {
+    color: #55F;
+}
+
+.long-google-unselected:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #DDD;
+    color: #444;
+}
+
+.location {
+    display: flex;
+    margin-top: 2rem;
+    padding: 1rem 3rem;
+    border-bottom: 1px solid #AAA;
+}
+
+.location-line {
+    border-left: 1px solid #AAA;
+    margin: 0 1rem;
+}
+
+.grey-dot {
+    border-radius: 100%;
+    background-color: #777;
+    width: 0.7rem;
+    height: 0.7rem;
+    margin-right: 1rem;
+}
+
+.footnote {
+    display: flex;
+    padding: 1rem 0 2rem 3rem;
+}
+
+.footer-link:hover {
+    color: #000;
+}
+
+.footnote-element {
+    margin-right: 1rem;
+}
