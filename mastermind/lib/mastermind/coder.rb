@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Mastermind
+  # Coder handles the feedback system and stores the code
   class Coder
     attr_reader :code
 
@@ -9,25 +10,18 @@ module Mastermind
     end
 
     def player_feedback(guess)
-      if guess == code
-        return true
-      end
+      return true if guess == code
 
       feedback = Coder.feedback(@code, guess)
-
-      puts "Computer receives feedback #{feedback}"
-
+      puts "Computer receives feedback #{feedback}\n\n"
       Guesser.computer_receive_feedback(feedback, guess)
-
       false
     end
 
     def computer_feedback(guess)
-      if guess == code
-        return true
-      end
+      return true if guess == code
 
-      puts "Computer feedbacks #{Coder.feedback(@code, guess)}"
+      puts "Computer feedbacks #{Coder.feedback(@code, guess)}\n\n"
 
       false
     end
@@ -40,7 +34,7 @@ module Mastermind
       i = -1
       guess_array.select! do |e|
         i += 1
-        if(e == code_array[i])
+        if e == code_array[i]
           code_array[i] = nil
           feedback.push('O')
           false
@@ -51,19 +45,18 @@ module Mastermind
 
       code_array.compact!
 
-      while guess_array.length > 0
+      while guess_array.length.positive?
         n = code_array.find_index(guess_array[0])
-        if(n)
+        if n
           code_array.delete_at(n)
           feedback.push('N')
         end
         guess_array.delete_at(0)
       end
 
-      while(feedback.length < 4)
-        feedback.push('X')
-      end
-      feedback.join()
+      feedback.push('X') while feedback.length < 4
+
+      feedback.join
     end
   end
 end

@@ -8,10 +8,10 @@ module Mastermind
       puts intro
       player_info
       i = 1
-      while(i <= 12) do
+      while i <= 12
         puts "Guess #{i}"
         guess = @players[0].guess
-        if(@players[1].feedback(guess))
+        if @players[1].feedback(guess)
           puts "#{@players[0].name} guessed the code #{@players[1].role.code}. #{@players[0].name} wins!"
           return
         end
@@ -23,13 +23,13 @@ module Mastermind
     private
 
     def generate_code
-      4.times.map{ 1 + rand(6) }.join
+      4.times.map { rand(1...7) }.join
     end
 
     def ask_code
       puts 'Enter your code: (The computer will not be able to see it)'
       code = gets.chomp
-      while(!code.code_valid?)
+      until code.code_valid?
         puts "#{code} is invalid. Enter another code: (code must be 4 digits long with each digit being from 1 to 6)"
         code = gets.chomp
       end

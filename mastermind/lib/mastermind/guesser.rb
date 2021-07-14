@@ -3,24 +3,22 @@
 module Mastermind
   # Guesser will handle the computer and player action with the role of guesser
   class Guesser
-    attr_reader :possible_guesses
+    def initialize(computer = false)
+      return unless computer
 
-    def initialize (computer = false)
-      if(computer)
-        digits = ['1', '2', '3', '4', '5', '6']
-        @@possible_guesses = digits.repeated_permutation(4).to_a
-        @@possible_guesses.map! { |a| a.join() }
-      end
+      digits = %w[1 2 3 4 5 6]
+      @@possible_guesses = digits.repeated_permutation(4).to_a
+      @@possible_guesses.map! &:join
     end
 
-    def possible_guesses
+    def self.possible_guesses
       @@possible_guesses
     end
 
     def player_guess
       puts 'Guess the secret code:'
       code = gets.chomp
-      if(!code.code_valid?)
+      unless code.code_valid?
         puts "WARNING: This code is not valid. (Only 1 warning will be given)\nEnter code:"
         code = gets.chomp
       end
